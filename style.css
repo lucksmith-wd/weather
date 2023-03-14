@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: normal;
+  color: #fff;
+}
+
+.main-grid {
+  min-height: 100vh;
+  background-image: url('./bg-image.jpg');
+  background-size: cover;
+}
