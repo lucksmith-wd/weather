@@ -64,7 +64,7 @@ async function getWeather(city) {
 
 async function getCoordinates(city) {
   try {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=2e3bcbca68217d01aa3b98dc494c3ca1`, { mode: 'cors' })
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=2e3bcbca68217d01aa3b98dc494c3ca1`, { mode: 'cors' })
     const coordinates = await response.json();
     return [coordinates[0].lat, coordinates[0].lon];
   } catch (error) {
