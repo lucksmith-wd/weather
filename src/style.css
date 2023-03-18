@@ -1,3 +1,7 @@
+/****************************************************
+*   Resets                                          *
+*****************************************************/
+
 *,
 *::after,
 *::before {
@@ -11,20 +15,279 @@ h3,
 h4,
 p {
   margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 body {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Arima Madurai', cursive;
   font-weight: normal;
   color: #fff;
+  /* background-color: black; */
 }
 
-.main-grid {
+
+.main-container {
   min-height: 100vh;
   background-image: url('./assets/bg-image.jpg');
   background-size: cover;
+  padding: 3em;
 }
 
-h1 {
-  color: red;
+/****************************************************
+*   Primary Info                                    *
+*****************************************************/
+
+.primary-info {
+  /* background-color: pink; */
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  max-width: 500px;
+}
+
+.description {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.current-time {
+  margin-top: -.75rem;
+}
+
+.temperature {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-top: 1rem;
+  letter-spacing: normal;
+}
+
+/* Unit toggle ------------------------------------- */
+
+.unit-toggle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  width: 150px;
+  border: 2px solid white;
+  border-radius: 100px;
+  padding: .2rem 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  overflow: hide;
+  background-color: rgba(0, 0, 0, .3);
+  cursor: pointer;
+}
+
+.unit-toggle::after {
+  content: '';
+  width: 50%;
+  height: 100%;
+  background-color: #6b85aa;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s;
+}
+
+.unit-toggle.imperial::after {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+.owf {
+  font-size: 15rem;
+  display: block;
+  width: max-content;
+  margin-bottom: 1rem;
+}
+
+/* Form ---------------------------------------------- */
+
+.search-input {
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 1em;
+  border: 0;
+  letter-spacing: 1px;
+}
+
+.search-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.search-box {
+  margin-top: 1rem;
+  border-bottom: 2px solid #fff;
+  max-width: 350px;
+  position: relative;
+}
+
+.search-input {
+  max-width: 100%;
+  min-width: 50px;
+}
+
+.search-input:focus {
+  outline: 0;
+}
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.error-msg {
+  font-size: .875rem;
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
+/****************************************************
+*   Secondary Info                                  *
+*****************************************************/
+
+.info-grid {
+  max-width: max-content;
+  height: max-content;
+  margin: 3rem auto 0;
+  display: grid;
+  column-gap: 1rem;
+  align-items: start;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: max-content;
+  grid-template-areas:
+    "temp-icon temp-title"
+    "temp-icon temp-data"
+    "hum-icon hum-title"
+    "hum-icon hum-data"
+    "wind-icon wind-title"
+    "wind-icon wind-data"
+    "sunrise-icon sunrise-title"
+    "sunrise-icon sunrise-data"
+    "sunset-icon sunset-title"
+    "sunset-icon sunset-data";
+}
+
+.info-title {
+  font-size: 1.25rem;
+}
+
+.info-data {
+  margin-top: -.75rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.info-data:not(:last-child) {
+  margin-bottom: 1rem;
+
+}
+
+.icon {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.icon-temperature {
+  grid-area: temp-icon;
+}
+
+.temperature-title {
+  grid-area: temp-title;
+}
+
+.temperature-data {
+  grid-area: temp-data;
+}
+
+.icon-humidity {
+  grid-area: hum-icon;
+}
+
+.humidity-title {
+  grid-area: hum-title;
+}
+
+.humidity-data {
+  grid-area: hum-data;
+}
+
+.icon-wind {
+  grid-area: wind-icon;
+}
+
+.wind-title {
+  grid-area: wind-title;
+}
+
+.wind-data {
+  grid-area: wind-data;
+}
+
+.icon-sunrise {
+  grid-area: sunrise-icon;
+}
+
+.sunrise-title {
+  grid-area: sunrise-title;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+}
+
+.sunrise-data {
+  grid-area: sunrise-data;
+}
+
+.icon-sunset {
+  grid-area: sunset-icon;
+}
+
+.sunset-title {
+  grid-area: sunset-title;
+}
+
+.sunset-data {
+  grid-area: sunset-data;
+}
+
+@media(min-width:600px) {
+  .main-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .info-grid {
+    margin: 0;
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    padding: 2rem;
+  }
 }

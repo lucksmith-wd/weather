@@ -7,18 +7,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather app</title>
 
+  <!-- Fontawsome kit -->
+  <script src="https://kit.fontawesome.com/0b2cbe0d98.js" crossorigin="anonymous"></script>
+
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
 
 </head>
 
 <body>
-  <div class="main-grid">
-    <h1>hi</h1>
-    <img class="current-icon" alt="">
+  <div class="main-container">
+    <div class="primary-info">
+      <h2 class="description"></h2>
+      <p class="city"></p>
+      <div class="date-time">
+        <p class="date"></p>
+        <p class="current-time"></p>
+      </div>
+      <h1 class="temperature"></h1>
+      <!-- <img class="weather-icon" alt="weather icon"> -->
+      <i class="owf owf-5x"></i>
+      <div class="unit-toggle"><span>&deg;F</span><span>&deg;C</span></div>
+      <form action="#" class="search-location">
+        <div class="search-box">
+          <input class="search-input" id="search-input" type="text" autofocus="true" placeholder="search loaction">
+          <button class="button" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+      <div class="error-msg">
+        <p>Locatiopn not found</p>
+        <p>Please search in this format: "City" or "City,State" or "City,Country"</p>
+      </div>
+    </div>
+    <div class="secondary-info info-grid">
+      <i class="icon icon-temperature icon-temperature fa-solid fa-temperature-half"></i>
+      <div class="info-title temperature-title">Feels like</div>
+      <div class="info-data temperature-data"></div>
+
+      <i class="icon icon-humidity fa-solid fa-water"></i>
+      <div class="info-title humidity-title">Humidity</div>
+      <div class="info-data humidity-data"></div>
+
+      <i class="icon icon-wind fa-solid fa-wind"></i>
+      <div class="info-title wind-title">Wind speed</div>
+      <div class="info-data wind-data"></div>
+
+      <i class="icon icon-sunrise fa-solid fa-sun"></i>
+      <div class="info-title sunrise-title">Sunrise</div>
+      <div class="info-data sunrise-data"></div>
+
+      <i class="icon icon-sunset fa-regular fa-sun"></i>
+      <div class="info-title sunset-title">Sunset</div>
+      <div class="info-data sunset-data"></div>
+    </div>
+  </div>
   </div>
 </body>
 
